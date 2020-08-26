@@ -22,3 +22,18 @@ body{
 h1{
   width:40%;
 }
+
+li::after{
+ content:"\f14a";
+ font-family: "Font Awesome 5 Free";
+ font-style: normal;
+ font-weight: 800;
+ padding-left: 20px;
+ cursor: pointer;
+}
+
+.active{
+  transition: 2s;
+  color:red;
+  background-color: lightgrey;
+}

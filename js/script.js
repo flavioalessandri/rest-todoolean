@@ -1,6 +1,7 @@
 
-function getListData(){
+function getData(){
   var target = $('#myList');
+  $('#myList').text("");
   $.ajax({
 
     url:"http://157.230.17.132:3000/todos",
@@ -11,7 +12,7 @@ function getListData(){
       console.log("data",data);
       console.log(data.text);
       for (var i = 0; i < data.length; i++) {
-        target.append(`<li data-id = "${data[i].id}"> ${data[i].text}</li>`);
+        target.append(`<li data-id = "${data[i].id}"> ${data[i].text}`);
       }
     },
 
@@ -32,11 +33,24 @@ function insertDataOnClick(){
 
 
 function deleteListData(){
+  var id = $(this).data('id');
   console.log("CLICK" + $(this).data('id'));
+  $.ajax({
+    url: `http://157.230.17.132:3000/todos/${id}`,
+
+    method: "DELETE",
+
+    success: function (data){
+      console.log("delete data", data);
+      getData();
+    },
+
+    error: function(error){
+      console.log("delete error",error);
+    }
+
+  })
 }
-
-
-
 
 function setListData(){
 
@@ -57,6 +71,8 @@ function setListData(){
 
     success: function (data){
       console.log("data",data);
+      getData();
+
     },
 
     error: function (error){
@@ -67,16 +83,31 @@ function setListData(){
 }
 
 
+function listDataHover(){
+  var items = $('#myList li');
+  $(document).on("mouseenter",'#myList li',function(){
+      $(this).addClass('active');
+  })
+}
+
+function listDataLeave(){
+  var items = $('#myList li');
+  $(document).on("mouseleave",'#myList li',function(){
+    $(this).removeClass('active');
+  })
+}
 
 
 
 
 function init(){
-  console.log("Hello World");
   insertDataOnClick();
   deleteDataOnClick()
-  getListData();
-  // setListData();
+  getData();
+
+  listDataHover();
+  listDataLeave();
+
 }
 
 
