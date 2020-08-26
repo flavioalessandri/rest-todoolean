@@ -102,7 +102,7 @@ function listDataLeave(){
 
 function init(){
   insertDataOnClick();
-  deleteDataOnClick()
+  deleteDataOnClick();
   getData();
 
   listDataHover();
