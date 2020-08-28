@@ -1,0 +1,95 @@
+*{
+  padding:0;
+  margin:0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Sailec-Bold','system-ui','-apple-system','BlinkMacSystemFont','Segoe UI','Roboto','Helvetica Neue','Helvetica','Arial','sans-serif';
+  font-size: 1rem;
+  line-height: 3rem;
+  color:rgba(3, 27, 78, 0.6);
+  font-weight: 600;
+}
+
+.header{
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+  margin-bottom:20px;
+}
+
+h1{
+  margin:20px 0;
+  text-align: center;
+}
+
+.list{
+  width:100%;
+  position:relative;
+}
+
+.inputSection{
+  margin:0 auto;
+  max-width: 300px;
+  vertical-align: center;
+}
+
+input{
+  width: 200px;
+  height:29px;
+}
+
+#btn{
+  color:rgba(3, 27, 78, 0.6);
+  padding:8px 32px;
+  border-radius: 5px;
+  border: none;
+  background-color: #81b29a;
+}
+
+
+#myList{
+  max-width: 300px;
+  margin:0 auto;
+
+  background-color: #C0D8CC;
+  list-style-type: none;
+}
+
+
+li::before{
+ content:"\f14a";
+ font-family: "Font Awesome 5 Free";
+ font-style: normal;
+ font-weight: 800;
+ padding: 0 20px;
+ cursor: pointer;
+}
+
+li{
+  border-bottom: 1px solid rgba(3, 27, 78, 0.6);
+}
+
+
+.cornered {
+  width: 195px;
+  padding-bottom: 20px;
+  border-bottom: 50px solid #C0D8CC;
+  border-left: 300px solid #D9E8E0;
+  margin: 0 auto;
+}
+
+
+.active{
+  transition: .3s;
+  color:white;
+  background-color: #81b29a;
+}
+
+#btn:hover{
+  background-color: #D9E8E0;
+
+}
